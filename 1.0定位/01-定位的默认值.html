@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            border: 1px solid red;
+        }
+        html{
+            margin: 30px;
+        }
+        body{
+            margin: 40px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+            margin: 100px 100px;
+            /* position: position; */
+            position: relative;
+            left: 1000;
+        }
+        .box1{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left:10px;
+            background-color: rosybrown;
+        }
+        .bigWrap{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+   <div class="bigWrap">
+    <div class="wrap">
+        <div class="box1">
+
+        </div>
+    </div>
+   </div>
+</body>
+</html>
