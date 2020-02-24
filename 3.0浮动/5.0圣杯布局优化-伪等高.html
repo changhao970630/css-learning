@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1.两边固定中间自适应
+        2.优先加载middle
+        3.middle完整显示
+     -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 600px;
+        }
+
+        .header,
+        .footer {
+            background: lightblue;
+            height: 200px;
+            border-bottom: 1px solid pink;
+        }
+
+        .content {
+            padding: 0 200px;
+            border-bottom: 3px solid red;
+            overflow: hidden;
+
+        }
+
+        .middle {
+            background-color: deeppink;
+            float: left;
+            width: 100%;
+        }
+
+        .left {
+            background-color: yellow;
+            width: 200px;
+            float: left;
+            margin-left: -100%;
+            position: relative;
+            left: -200px;
+            padding-bottom: 1000px;
+            margin-bottom: -1000px;
+
+        }
+
+        .right {
+            background-color: yellow;
+            width: 200px;
+            float: left;
+            margin-left: -200px;
+            position: relative;
+            left: 200px;
+            padding-bottom: 1000px;
+            margin-bottom: -1000px;
+
+
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix::after {
+            clear: both;
+            display: block;
+            content: '';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">header</div>
+    <div class="content clearfix">
+        <div class="middle">
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+            <p>middle</p>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>
