@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            border: 2px solid;
+            /* position: absolute; */
+            /* position: fixed; */
+            /* float: left; */
+            /* height: 100px; */
+            /* zoom缩放，为了兼容ie6，ie6 详见ie6 haslayout*/
+            zoom: 1;
+        }
+        .father::after{
+            clear: both;
+            content: '';
+            clear: both;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+       <div style="clear: both;"></div>
+    </div>
+</body>
+
+</html>

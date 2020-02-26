@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 单行内块元素垂直居中 -->
+<style>
+    .wrap{
+        width: 500px;
+        height: 500px;
+        border: 1px solid;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .wrap:after{
+        content: '';
+        width: 1px;
+        display: inline-block;
+        height: 100%;
+        background-color: palegoldenrod;
+        vertical-align: middle;
+    }
+    .wrap>img{
+        width: 100px;
+        vertical-align: middle;
+    }
+    }
+    /* 两个行内块元素互相 vertical-align: middle; */
+</style>
+<body>
+    <div class="wrap">
+        <img src="../image/bba1cd11728b4710a5ce5cb4d4cec3fdfd0323e0.gif" alt="">
+    </div>
+</body>
+</html>

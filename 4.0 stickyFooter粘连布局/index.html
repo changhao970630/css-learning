@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            /* 继承视口高度 */
+            height: 100%;
+        }
+        body{
+            /* 继承html高度 */
+            height: 100%;
+        }
+        .wrap{
+            /* 继承body高度 使主体充满屏幕,内容不超过的时候，也能保证wrap占满全屏，超过的时候，高度也可以根据内容撑开*/
+            min-height: 100%;
+            background-color: pink;
+            text-align: center;
+        }
+        .main{
+            padding-bottom: 50px;
+        }
+        .header,.footer{
+            height: 50px;
+            background-color: rgb(138, 172, 172);
+        }
+        .footer{
+             /* 内容不超过屏幕的时候消除滚动条 */
+            margin-top: -50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">header</div>
+        <div class="main">
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+            Main<br> Main<br>
+            Main<br>
+            Main<br>
+            Main<br> Main<br>
+            Main<br>
+            Main<br>
+            Main<br> Main<br>
+            Main<br>
+            Main<br>
+            Main<br> Main<br>
+            Main<br>
+            Main<br>
+            Main<br> Main<br>
+            Main<br>
+            Main<br>
+            Main<br> Main<br>
+            Main<br>
+            Main<br>
+            Main<br> Main<br>
+            Main<br>
+            Main<br>
+            Main<br>
+        </div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+</html>
