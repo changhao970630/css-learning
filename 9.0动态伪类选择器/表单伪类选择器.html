@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+        }
+        input:enabled{
+            background-color: green ;
+        }
+        input:disabled{
+            background-color: red ;
+        }
+        input:focus{
+            background-color: yellowgreen;
+        }
+        input:checked{ 
+            /* //部分属性不生效 */
+           width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text" disabled='disabled'>
+    <input type="checkbox">
+</body>
+</html>

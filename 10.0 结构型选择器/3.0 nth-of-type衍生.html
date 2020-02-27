@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .wrap1 {
+        text-align: center;
+        background-color: rgb(61, 197, 197);
+    }
+
+    .wrap1 p:first-of-type {
+        color: red;
+    }
+
+    .wrap1 p:last-of-type {
+        color: blue;
+    }
+
+    .wrap1 p:nth-last-of-type(2) {
+        color: yellow;
+    }
+
+    .wrap2 {
+        text-align: center;
+    }
+    .wrap2 p:only-of-type{
+        color: red;
+    }
+</style>
+
+<body>
+    <!-- <div class="wrap1">
+        <ul>
+            <li>1</li>
+            <p>悄悄混入的p标签1·红红</p>
+            <li>2</li>
+            <p>悄悄混入的p标签2·黄黄(倒数第二)·红红</p>
+            <li>3</li>
+            <p>悄悄混入的p标签3·蓝蓝</p>
+        </ul>
+    </div> -->
+    <div class="wrap2">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <p>第3个p</p>
+        </ul>
+        <hr>
+        <ul>
+            <li>1</li>
+            <p>第1个p</p>
+            <li>2</li>
+            <p>第2个p</p>
+            <li>3</li>
+            <p>第3个p</p>
+        </ul>
+    </div>
+</body>
+
+</html>

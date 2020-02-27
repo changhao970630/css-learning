@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+       1. nth-of-type以元素为中心
+        
+     -->
+     <style>
+         /* .wrap .inner:nth-of-type(1){
+             color: darkgoldenrod;
+         } */
+         .wrap .inner:nth-child(1){
+             color: darkgoldenrod;
+         }
+     </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="inner">div</div>
+        <h1  class="inner">h1</h1>
+        <h2  class="inner">h1</h2>
+        <p  class="inner">p</p>
+        <span  class="inner">span</span>
+    </div>
+</body>
+</html>

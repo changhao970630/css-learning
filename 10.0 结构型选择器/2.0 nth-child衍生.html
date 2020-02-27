@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        nth-child衍生
+        i:first-child //第一个且为li
+        li:last-child // 最后一个个且为li
+        li:nth-last-child(index)//倒数第index个
+        li:only-child //独生子
+     -->
+</head>
+<style>
+    .wrap li:first-child{
+        color: red;
+    }
+    .wrap li:nth-last-child(1){
+        font-weight: bold;
+    }
+    .wrap li:last-child{
+        color: blue;
+    }
+    .box2 li:only-child{
+        color: pink;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <ul>
+            <li>第一个为红色</li>
+            <li>2</li>
+            <li>3</li>
+            <li>最后（倒数第一字体粗）一个为蓝色</li>
+        </ul>
+    </div>
+    <div class="box2">
+        <ul>
+            <li>1</li>
+        </ul>
+        <ul>
+            <li>1</li>
+            <li>1</li>
+        </ul>
+        <ul>
+            <li>1</li>
+        </ul>
+    </div>
+</body>
+
+</html>

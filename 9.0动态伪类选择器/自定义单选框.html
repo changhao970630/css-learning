@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:checked+label {
+            color: red;
+            background-color: darkcyan;
+            position: relative;
+        }
+        input:checked+label::after{
+            content: 'Choosed';
+            color: white;
+            text-align: center;
+            text-shadow: 5px 5px 5px black;
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            line-height: 100px;
+            animation: one 2s  infinite linear ; 
+
+        }
+        @keyframes one {
+            0%{
+                transform: rotateZ(0deg);
+                font-size: 16px;
+            }
+            25%{
+                transform: rotateZ(90deg);
+                padding: 10px;
+                font-size: 26px;
+
+            }
+            50%{
+                transform: rotateZ(180deg);
+                padding: 0px;
+                font-size: 16px;
+
+            }
+            75%{
+                padding: 10px;
+                font-size: 26px;
+                transform: rotateZ(270deg);
+            }
+            100%{
+                transform: rotateZ(360deg);
+                padding: 0px;
+                font-size: 16px;
+
+            }
+        }
+        input{
+            display: none;
+        }
+        label{
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px bisque;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="radio" name="my-input" id="one">
+        <label for="one"></label>
+        <input type="radio" name="my-input" id="two">
+        <label for="two"></label>
+        <input type="radio" name="my-input" id="three">
+        <label for="three"></label>
+        
+      </div>
+</body>
+
+</html>
