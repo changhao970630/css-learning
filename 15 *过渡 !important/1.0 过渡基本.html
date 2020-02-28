@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        #box{
+            height: 100%;
+            background-color: rosybrown;
+            text-align: center;
+        }
+        #box::after{
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        #modal{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 30%;
+            height: 300px;
+            background-color: rgba(147, 121, 173, 0.329);
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+            display: none;
+        }
+        img{
+            vertical-align: middle;
+            border: 3px pink solid;
+        }
+        img:hover{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            transition-property:width,height,border-radius;
+            transition-duration:5s,20s;
+            /* transition-timing-function:steps(5,start); */
+        }
+    </style>
+</head>
+<body>
+    <div id="modal">完成过渡</div>
+    <div id='box'>
+        <img src="../image/睡袋.png" width="500px" height="500px" >
+    </div>
+</body>
+<script>
+    let imgNode = document.querySelector('img')
+    let modalNode = document.querySelector('#modal')
+    imgNode.addEventListener('transitionend',()=>{
+        modalNode.style.display='block'
+    })
+</script>
+</html>
