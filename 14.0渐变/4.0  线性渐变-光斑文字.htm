@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            min-width: 120px;
+        }
+
+        #app {
+            height: 100%;
+            background-color: black;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+        }
+
+        h1 {
+            display: inline-block;
+            font-size: 90px;
+            color: rgba(245, 215, 215, 0.226);
+            background-image: linear-gradient(120deg, rgba(0, 0, 0, 1) 50px, rgba(255, 255, 255, 1) 150px, rgba(0, 0, 0, 0) 100px);
+            -webkit-background-clip: text;
+          
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <h1>Changhao常昊</h1>
+    </div>
+</body>
+<script>
+    let title= document.querySelector("h1")
+    let flag = 0
+    setInterval(()=>{
+        if(flag<700){
+            flag++
+            title.style.backgroundPosition = -flag+'px'
+        }else{
+            flag=-3000
+        }
+    },1000/600)
+</script>
+</html>

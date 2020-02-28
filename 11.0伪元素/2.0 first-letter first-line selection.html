@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1::first-letter{
+        font-weight: bold;
+        color: rgb(172, 142, 202);
+        font-size: 32px;
+    }
+    #box2::selection{
+        background-color: red;
+        color: pink;
+    }
+    #box3{
+        border: 1px solid red;
+    }
+    #box3::first-line{
+        background-color: blue;
+        color: chartreuse;
+    }
+</style>
+<body>
+    <!-- 
+        first-letter 
+        first-line
+         selection
+     -->
+     <div id="box1">hahahaha</div>
+     <div id="box2">hahahaha</div>
+     <div id="box3">
+        hahahaha<br>
+        hahahaha<br>
+        hahahaha<br>
+        hahahaha<br>
+     </div>
+</body>
+</html>

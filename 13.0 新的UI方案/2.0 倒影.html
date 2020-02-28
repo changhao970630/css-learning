@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body,
+        div {
+            height: 100%;
+        }
+
+        #wrap {
+            width: 100%;
+            background: pink;
+            text-align: center;
+        }
+
+        #wrap:after {
+            display: inline-block;
+            content: '';
+            height: 100%;
+            vertical-align: middle;
+        }
+        img{
+            vertical-align: middle;
+            -webkit-box-reflect: below 1px linear-gradient(to bottom,rgba(221, 216, 216, 0),rgba(161, 99, 99, 0.164));
+        }
+    </style>
+</head>
+
+<body>
+    <div id='wrap'>
+        <img src="../image/睡袋.png" alt="">
+    </div>
+</body>
+
+</html>

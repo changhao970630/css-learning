@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body,.wrap{
+            height: 100%;
+        }
+        .wrap{
+            background-color: pink;
+            text-align: center;
+        }
+        .wrap::after{
+            height: 100%;
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid red;
+            background-size: 30% 30%;
+            /* background-repeat: repeat-x; */
+            background-repeat: repeat-y;
+            background-image: url('../image/睡袋.png');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

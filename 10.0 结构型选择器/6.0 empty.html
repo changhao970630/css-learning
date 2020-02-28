@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap div{
+            margin: 20px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .wrap div:not(:empty){
+            background-color: rgb(226, 186, 94);
+        }
+        .wrap div:empty{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div>1</div>
+        <div></div>
+        <div>3</div>
+        <div></div>
+        <div>5</div>
+    </div>
+</body>
+</html>
