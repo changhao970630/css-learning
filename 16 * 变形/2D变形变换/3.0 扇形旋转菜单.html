@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        img {
+            width: 50px;
+            position: absolute;
+            border-radius: 50%;
+            
+            left: 0;
+            top: 0;
+        }
+
+        #wrap {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        #main {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 999;
+            background: url('./image/风扇.png');
+            background-size: 100% 100%;
+            transition: 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id='main'>
+        </div>
+        <img src="./image/袜子.png">
+        <img src="./image/纸巾 2.png">
+        <img src="./image/玩具鸭.png">
+        <img src="./image/小皮球.png">
+        <img src="./image/婴儿车.png">
+    </div>
+</body>
+<script>
+    window.onload = () => {
+        let imgs = document.querySelectorAll('img')
+        for (let i = 0; i < imgs.length; i++) {
+            imgs[i].addEventListener('click',()=>{
+                imgs[i].style.transform = 'scale(2)'
+                imgs[i].style.opacity =0.5
+            })
+        }
+        let getDeg = (deg, radius) => {
+            let radin = (deg * Math.PI) / 180
+            console.log(`${deg}的弧度是${radin},他都sin值为${Math.sin(radin)}`)
+            let x = Math.round(radius * Math.sin(radin))
+            let y = Math.round(radius * Math.cos(radin))
+            return {
+                x: x,
+                y: y
+            }
+        }
+        let status = true
+        let main = document.querySelector('#main')
+        main.addEventListener('click', () => {
+            if (status) {
+                main.style.transform = 'rotate(720deg)'
+                for (let i = 0; i < imgs.length; i++) {
+                    console.log(getDeg(22.5 * i, 100).x)
+                    imgs[i].style.transition = `2s ${i*0.2}s`
+                    imgs[i].style.transform = `rotate(720deg)`
+                    imgs[i].style.left = `-${getDeg(22.5*i,200).x}px`
+                    imgs[i].style.top = `-${getDeg(22.5*i,200).y}px`
+                }
+                status = false
+            } else {
+                main.style.transform = 'rotate(0deg)'
+                for (let i = 0; i < imgs.length; i++) {
+                    imgs[i].style.transition = `2s ${0.9-i*0.2}s`
+                    imgs[i].style.transform = `rotate(0deg)`
+                    imgs[i].style.left = `-${0}px`
+                    imgs[i].style.top = `-${0}px`
+                }
+                status = true
+            }
+        })
+
+    }
+</script>
+
+</html>
