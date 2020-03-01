@@ -21,7 +21,6 @@
             width: 50px;
             position: absolute;
             border-radius: 50%;
-            
             left: 0;
             top: 0;
         }
@@ -60,11 +59,18 @@
 <script>
     window.onload = () => {
         let imgs = document.querySelectorAll('img')
+
         for (let i = 0; i < imgs.length; i++) {
-            imgs[i].addEventListener('click',()=>{
+            imgs[i].onclick = () => {
+                imgs[i].style.transition='1s'
                 imgs[i].style.transform = 'scale(2)'
-                imgs[i].style.opacity =0.5
-            })
+                imgs[i].style.opacity = 0.5
+                imgs[i].addEventListener('transitionend', function fn() {
+                    imgs[i].style.transform = 'scale(1)'
+                    imgs[i].style.opacity = 1
+                    imgs[i].removeEventListener(fn)
+                })
+            }
         }
         let getDeg = (deg, radius) => {
             let radin = (deg * Math.PI) / 180
