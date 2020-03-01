@@ -63,12 +63,12 @@
         for (let i = 0; i < imgs.length; i++) {
             imgs[i].onclick = () => {
                 imgs[i].style.transition='1s'
-                imgs[i].style.transform = 'scale(2)'
+                imgs[i].style.transform = 'rotate(-720deg) scale(2) '
                 imgs[i].style.opacity = 0.5
                 imgs[i].addEventListener('transitionend', function fn() {
-                    imgs[i].style.transform = 'scale(1)'
+                    imgs[i].style.transform = 'rotate(-720deg) scale(1)'
                     imgs[i].style.opacity = 1
-                    imgs[i].removeEventListener(fn)
+                    imgs[i].removeEventListener('transitionend',fn)
                 })
             }
         }
@@ -90,7 +90,7 @@
                 for (let i = 0; i < imgs.length; i++) {
                     console.log(getDeg(22.5 * i, 100).x)
                     imgs[i].style.transition = `2s ${i*0.2}s`
-                    imgs[i].style.transform = `rotate(720deg)`
+                    imgs[i].style.transform = `rotate(720deg) scale(1)`
                     imgs[i].style.left = `-${getDeg(22.5*i,200).x}px`
                     imgs[i].style.top = `-${getDeg(22.5*i,200).y}px`
                 }
@@ -99,7 +99,7 @@
                 main.style.transform = 'rotate(0deg)'
                 for (let i = 0; i < imgs.length; i++) {
                     imgs[i].style.transition = `2s ${0.9-i*0.2}s`
-                    imgs[i].style.transform = `rotate(0deg)`
+                    imgs[i].style.transform = `rotate(0deg)  scale(1)`
                     imgs[i].style.left = `-${0}px`
                     imgs[i].style.top = `-${0}px`
                 }
