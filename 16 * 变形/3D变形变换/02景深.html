@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #stage{
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background: url('../2D变形变换/image/小皮球.png');
+            /* background-color: palegoldenrod; */
+            border: 1px solid;
+            background-size:  100px 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            border-radius: 50%;
+            transition: 5s;
+            transform: perspective(100px) rotatey(0deg);
+        }
+        #stage:hover #inner{
+            transform:perspective(300px) rotatey(360deg)
+        }
+    </style>
+</head>
+<body>
+    <div id="stage">
+        <div id="inner"></div>
+    </div>
+</body>
+</html>

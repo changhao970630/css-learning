@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #stage{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            color: rgb(255, 255, 255);
+            perspective: 200px;
+            transform-style: preserve-3d;
+        }
+        #stage >#wrap{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            transform-origin: center center -100px;
+
+            top: 0;
+            right: 0;
+            margin: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+            font: 50px/200px '微软雅黑';
+            transition: 4s;
+            transform-style: preserve-3d;
+        }
+        #stage >#wrap>div{
+            transform-origin: center center -100px;
+            width: 200px;
+            height: 200px;
+            background-color: royalblue;
+            position: absolute;
+        }
+        #stage >#wrap>div:nth-child(1){
+            z-index: 1;
+        }
+        #stage >#wrap>div:nth-child(2){
+            transform:rotateY(180deg)
+        }
+        #stage >#wrap>div:nth-child(3){
+            transform:rotateY(270deg)
+        }
+        #stage >#wrap>div:nth-child(4){
+            transform:rotateY(90deg)
+        }
+        #stage >#wrap>div:nth-child(5){
+            transform:rotatex(90deg)
+        }
+        #stage >#wrap>div:nth-child(6){
+            transform:rotatex(270deg)
+        }
+        #stage:hover #wrap{
+            transform:rotate3d(2,5,6,720deg)
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="stage">
+        <div id="wrap">
+            <div>前</div>
+            <div>后</div>
+            <div>左</div>
+            <div>右</div>
+            <div>上</div>
+            <div>下</div>
+        </div>
+    </div>
+</body>
+</html>

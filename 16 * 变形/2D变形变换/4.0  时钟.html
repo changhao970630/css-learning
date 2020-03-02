@@ -47,7 +47,7 @@
         .hand {
             position: absolute;
             opacity: 0.5;
-            transform-origin: bottom;
+            transform-origin:center bottom;
         }
 
         #hourHands {
@@ -100,7 +100,7 @@
             style.innerHTML += `#plate ul li:nth-child(${i+1}){
                 transform:translatex(149px) rotate(${i*6}deg) ;
                 transform-origin: 1px 150px;
-               width:${(i*6)%90==0?2:1}px;
+               width:${i%6==0?2:1}px;
             }`
         }
         let hourDom = document.querySelector('#hourHands');
@@ -111,7 +111,7 @@
             let hourTime = date.getHours()
             let minTime = date.getMinutes()
             let secTime = date.getSeconds()
-            let time = `${hourTime>12?hourTime-12:hourTime}:${minTime}:${secTime>=10?secTime:`0${secTime}`}`
+            let time = `${hourTime>12?hourTime-12:hourTime}:${minTime>=10?minTime:`0${minTime}`}:${secTime>=10?secTime:`0${secTime}`}`
             document.querySelector('#time').innerHTML = time
             hourDom.style.transform = ` translate(146px, 110px) rotate(${hourTime*360/12}deg)`
             minDom.style.transform = ` translate(147.5px, 90px)  rotate(${minTime*360/60}deg)`

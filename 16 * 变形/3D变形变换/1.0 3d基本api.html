@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        rotateX,rotateY,rotateZ,rotate3d,
+        translateX,translateY,translateZ,translate3d,
+        scalex(),scale()y,scalez(),scale3d */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #stage{
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            perspective: 90px;
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background: url('../2D变形变换/image/小皮球.png');
+            /* background-color: palegoldenrod; */
+            border: 1px solid;
+            background-size:  100px 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            border-radius: 50%;
+            transition: 5s;
+        }
+        #stage:hover #inner{
+            /* transform: scale(5) rotate3d(1,4,4,-720deg); */
+            /* transform: translateX(300px); */
+            /* transform: translateY(300px); */
+            /* transform: translateZ(300px); */
+            /* transform: translate3d(300px,300px,10px); */
+        }
+    </style>
+</head>
+<body>
+    <div id="stage">
+        <div id="inner"></div>
+    </div>
+</body>
+</html>

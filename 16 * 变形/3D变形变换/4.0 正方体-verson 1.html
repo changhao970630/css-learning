@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #stage{
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            perspective: 200px;
+            transform-style: preserve-3d;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            transition: 2s;
+            transform-style: preserve-3d;
+            transform-origin: center center -50px;
+        }
+        #box div{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 20, 145, 0.253);
+            position: absolute;
+            text-align: center;
+            font: 50px/100px '微软雅黑';
+            /* 背面不可见 */
+            backface-visibility: hidden;
+        }
+        #box div:nth-child(1){
+            /* 前 */
+           z-index: 1;
+        }
+        #box div:nth-child(3){
+            /* 左 */
+            transform-origin:right ;
+            transform:rotateY(-90deg);
+            left: -100px;
+        }
+        #box div:nth-child(4){
+             /* 右 */
+             transform-origin:left ;
+            transform:rotateY(90deg);
+            right: -100px;
+        }
+        #box div:nth-child(5){
+            /* 上 */
+            transform-origin:bottom ;
+            transform:rotatex(90deg);
+            top: -100px;
+        }
+        #box div:nth-child(6){
+            /* 下 */
+            transform-origin:top ;
+            transform:rotatex(-90deg);
+            bottom: -100px;
+        }
+        #box div:nth-child(2){
+            /* 后*/
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+        #stage:hover #box{
+            transform:rotate3d(1,5,3,720deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="stage">
+        <div id="box">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+    </div>
+</body>
+</html>
