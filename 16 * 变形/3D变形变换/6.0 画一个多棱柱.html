@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #stage {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -150px;
+            perspective: 500px;
+            transform-style: preserve-3d;
+        }
+
+        #stage>#box {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -75px;
+            margin-top: -75px;
+            transition: 50s linear;
+            transform-style: preserve-3d;
+        }
+        #stage:hover #box{
+            transform:rotatey(9000deg)
+        }
+        #stage>#box>div {
+            background-color: rgba(71, 173, 241, 0.733);
+            box-sizing: border-box;
+            border: 1px solid;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div id="stage">
+        <div id="box">
+
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        let box = document.querySelector('#box')
+    let style = document.querySelector("style") 
+    function createPrism(n,width) {
+
+        if (typeof n !== 'number') {
+            console.error("多棱柱的边数量必须为数字")
+        } else {
+            console.log(width)
+            let degOut = 360 / n;//外角
+            let degIn = 180 - 360 / n;//内角
+            // 角度转弧度
+
+            let boxSide = '';
+            for (let i = 0; i < n; i++) {
+                boxSide += `<div>${i+1}</div>`
+                style.innerHTML+=`#stage>#box>div:nth-child(${i+1}){
+                    width:${width}px;
+                    position:absolute;
+                    height:${width}px;
+                    text-align:center;
+                    font-size:${width/2}px;
+                    line-height:${width}px;
+                    transform-origin:center center -${width/2*Math.tan(degIn/2*(Math.PI/180))}px;
+                    transform:rotatey(${degOut*i}deg)
+                }`
+            }
+            box.innerHTML = boxSide
+        }
+    }
+    createPrism(3,100)
+    }
+</script>
+
+</html>

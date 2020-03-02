@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            background-color: rgba(36, 6, 6, 0.692);
+        }
+        #wrap{
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 1px solid;
+            text-align: center;
+            line-height: 500px;
+            color: blanchedalmond;
+            
+        }
+        span{
+           
+            font-size: 20px;
+            display: inline-block;
+        }
+        @keyframes move{
+            0%{
+                transform: translateY(0px);
+            }
+            25%{
+                transform: translateY(15px);
+            }
+            50%{
+                transform: translateY(0px);
+            }
+            75%{
+                transform: translateY(-15px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+      
+    </div>
+</body>
+<script>
+    let str = '最大的骄傲于最大的自卑都表示心灵的最软弱无力';
+    let wrap  = document.querySelector('#wrap');
+    let color = ['red','blue','yellow','darkcyan','pink','red','blue','yellow','darkcyan','pink','red','blue','yellow','darkcyan','pink','darkcyan','pink','red','blue','yellow','darkcyan','pink','red','blue','yellow','darkcyan','pink']
+    for(let i  = 0;i<str.length;i++){
+        let span = document.createElement('span')
+        wrap.appendChild(span)
+        span.innerHTML = str[i]
+        console.log(span)
+        span.style.animation = `move 2s infinite linear ${i*200}ms`;
+        span.style.color = color[i];
+    }
+</script>
+</html>
