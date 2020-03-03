@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #flexWrap{
+            width: 400px;
+            height: 400px;
+            border: 1px solid;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+            display: flex;
+        }
+        #flexWrap>#item{
+            color: rgb(14, 9, 1);
+            width: 150px;
+            height: 50px;
+            text-align: center;
+          
+        }
+        #flexWrap>#item:first-child{
+            background-color: blueviolet;
+        }
+        #flexWrap>#item:nth-child(2){
+            background-color: yellow;
+        }
+        #flexWrap>#item:nth-child(3){
+            background-color: rgb(167, 143, 190);
+
+        }
+        #flexWrap>#item:nth-child(4){
+            background-color: pink;
+        }
+        #flexWrap>#item:nth-child(5){
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="flexWrap">
+        <div id="item">1</div>
+        <div id="item">2</div>
+        <div id="item">3</div>
+        <div id="item">4</div>
+        <div id="item">5</div>
+    </div>
+</body>
+</html>
